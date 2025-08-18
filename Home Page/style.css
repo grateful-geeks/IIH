@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #0c1f2a;
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prosto+One&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300..700&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+.navbar {
+  margin: auto;
+  margin-top: 3vh;
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, #3a4a58, #1c232b);
+  padding: 10px 30px;
+  border-radius: 10px;
+  box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.2),
+    0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.navbar a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-family: "Quicksand", sans-serif;
+  font-size: 15px;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+  background: linear-gradient(to bottom, #3a4a58, #1c232b);
+}
+
+.navbar a:hover {
+  color: #b0d4ff;
+}
+img {
+  margin-top: 10vh;
+  margin-left: 5vw;
+  width: 20vh;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo h1 {
+  margin-top: 9vh;
+  margin-left: 2vw;
+  color: white;
+  font-family: "Prosto One", sans-serif;
+  font-weight: lighter;
+  font-size: 9vh;
+}
+.hero {
+  margin-top: 2vh;
+  margin-left: 5vw;
+  color: white;
+}
+.hero h1 {
+  font-size: 12vh;
+  font-family: poppins, sans-serif;
+  font-weight: 800;
+}
+.hero p {
+  color: #eaff00;
+  font-family: "Sarabun", sans-serif;
+  font-size: 4vh;
+  font-weight: lighter;
+}
+.hero .button {
+  background: linear-gradient(to bottom, #3a4a58, #1c232b);
+  border: none;
+  color: #cdd39f;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Courier New", monospace;
+  padding: 15px 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.2),
+    0px 4px 8px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  margin-top: 2vh;
+}
+.hero .button:hover {
+  background: linear-gradient(to bottom, #465463, #1a2129);
+  color: #e6ebc2;
+}
+.hero-section {
+  display: flex;
+}
+.hero-right {
+  display: flex;
+  align-items: end;
+}
+.hero-right img {
+  width: 10vw;
+  /* height: 50vh; */
+}
+.left-doctor {
+  /* position: absolute; */
+  bottom: 0;
+  opacity: 0.6;
+  filter: blur(0.5px);
+  transform: scaleX(-1);
+  height: 40vh;
+}
+.middle-doctor {
+  height: 60vh;
+  z-index: 1;
+}
+.right-doctor {
+  /* position: absolute; */
+  bottom: 0;
+  opacity: 0.6;
+  filter: blur(0.5px);
+  height: 50vh;
+}
