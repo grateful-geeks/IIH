@@ -1,0 +1,491 @@
+/* Base layout */
+:root {
+  --bg: #0c1f2a;
+  --panel: #122734;
+  --text: #e9f3f8;
+  --muted: #a9c1cc;
+  --accent: #2bd4ff;
+  --button: #263946;
+  --button-2: #2b3f4d;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #0c1f2a;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+  /* Prevent scroll while keeping responsiveness inside frame */
+  overflow: hidden;
+}
+
+.frame {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: 16px;
+  /* Subtle radial vignette as in screenshot */
+  background: radial-gradient(
+      1200px 600px at 50% 40%,
+      rgba(255, 255, 255, 0.06),
+      transparent 60%
+    )
+    var(--bg);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: clamp(28px, 4.5vw, 48px);
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
+}
+
+.content {
+  max-width: 1100px;
+  margin: 0px auto 70px auto;
+  display: grid;
+  place-items: center;
+  gap: min(6vh, 48px);
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(28px, 4.2vw, 56px);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: clamp(28px, 6vw, 72px);
+  align-items: start;
+}
+
+.option {
+  text-decoration: none;
+  color: inherit;
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  transform: translateZ(0);
+}
+
+.avatar {
+  width: clamp(160px, 22vw, 260px);
+  height: clamp(160px, 22vw, 260px);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(
+      90px 90px at 50% 35%,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0) 70%
+    ),
+    var(--panel);
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.06),
+    0 30px 60px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.avatar img {
+  max-width: 70%;
+  max-height: 82%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.45));
+}
+
+.aura::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 140px 40px rgba(0, 0, 0, 0.5) inset;
+  pointer-events: none;
+}
+
+.cta {
+  display: inline-block;
+  background: linear-gradient(180deg, var(--button), var(--button-2));
+  border-radius: 18px;
+  padding: 14px 26px;
+  box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  color: var(--text);
+  font-weight: 600;
+  font-size: clamp(16px, 1.6vw, 22px);
+  text-transform: none;
+  /* margin-top: 40px; */
+  z-index: 1;
+}
+
+.cta:focus-visible,
+.option:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* Floating decorations (lightweight, no extra assets required) */
+.decor {
+  list-style: none;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  font-weight: 700;
+  /* color: #ffffff; */
+}
+
+.decor li {
+  position: absolute;
+  opacity: 0.85;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.heart {
+  left: 36px;
+  top: 96px;
+  font-size: clamp(22px, 3vw, 36px);
+  color: #ff7ea9;
+}
+
+.bubble {
+  left: 56px;
+  bottom: 120px;
+  font-size: clamp(18px, 2.6vw, 32px);
+  color: #e9f3f8;
+}
+.bubble span {
+  font-size: 0.55em;
+  vertical-align: super;
+  margin-left: 4px;
+  color: var(--muted);
+}
+
+.bubble.small {
+  right: 80px;
+  bottom: 26px;
+}
+
+/* User icon styling to match decorations */
+.bubble.small .fa-user {
+  color: #cfe8f1;
+  font-size: clamp(18px, 2.4vw, 28px);
+}
+
+.plus {
+  left: 28px;
+  top: 300px;
+  font-size: clamp(18px, 2.4vw, 28px);
+  color: #cfe8f1;
+}
+
+.calendar {
+  right: 24px;
+  bottom: 120px;
+  width: clamp(34px, 4vw, 46px);
+  height: clamp(34px, 4vw, 46px);
+  border: 2px solid #cfe8f133;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 4px #cfe8f111;
+  color: white;
+}
+
+.sos {
+  right: 120px;
+  bottom: 90px;
+  color: #ff5252;
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 800;
+}
+.decorative-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.heart-icon {
+  position: absolute;
+  color: #ff6b9d;
+  font-size: 24px;
+  opacity: 0.7;
+  animation: float 3s ease-in-out infinite;
+}
+
+.heart-1 {
+  top: 20%;
+  right: 15%;
+  animation-delay: 0s;
+}
+
+.heart-2 {
+  bottom: 20%;
+  right: 50%;
+  animation-delay: 1.5s;
+}
+
+.medical-icon {
+  position: absolute;
+  color: #ffffff;
+  font-size: 20px;
+  opacity: 0.6;
+  animation: float 4s ease-in-out infinite;
+}
+
+.person-icon {
+  top: 30%;
+  right: 95%;
+  animation-delay: 0.5s;
+}
+
+.cross-icon {
+  top: 45%;
+  right: 20%;
+  animation-delay: 1s;
+}
+
+.calendar-icon {
+  top: 100%;
+  right: 25%;
+  animation-delay: 1.5s;
+}
+
+.stethoscope-icon {
+  top: 60%;
+  right: 100%;
+  animation-delay: 2s;
+}
+
+.lightning-icon {
+  top: 25%;
+  right: 35%;
+  animation-delay: 2.5s;
+}
+
+.oxygen-symbol {
+  position: absolute;
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 400;
+  opacity: 0.5;
+  animation: float 5s ease-in-out infinite;
+}
+
+.oxygen-1 {
+  top: 25%;
+  right: 0%;
+  animation-delay: 0s;
+}
+
+.oxygen-2 {
+  bottom: 30%;
+  right: 95%;
+  animation-delay: 2.5s;
+}
+
+.sos-text {
+  position: absolute;
+  bottom: 55%;
+  right: 45%;
+  color: #fd0e0e;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  transform: rotate(-13deg);
+  animation: pulse 2s ease-in-out infinite;
+}
+/* Responsiveness: ensure everything fits without scroll on typical screens */
+@media (max-aspect-ratio: 3/4) {
+  /* Taller screens: stack a bit tighter */
+  .options {
+    gap: 28px;
+  }
+  .avatar {
+    width: clamp(150px, 36vw, 220px);
+    height: clamp(150px, 36vw, 220px);
+  }
+}
+
+@media (max-width: 720px) {
+  /* Compact phones */
+  .content {
+    gap: 28px;
+  }
+  .options {
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+  .decor {
+    display: none;
+  }
+}
+
+/* Ensure no scroll bars appear due to rounding */
+.frame {
+  overflow: clip;
+}
+
+/* Decorative elements positioning */
+.decorative-elements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.decorative-elements > div {
+  position: absolute;
+  color: #ffffff;
+  opacity: 0.85;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Heart icons - top corners */
+.heart-icon.heart-1 {
+  top: 80px;
+  left: 40px;
+  font-size: clamp(20px, 3vw, 32px);
+  color: #ff7ea9;
+}
+
+.heart-icon.heart-2 {
+  top: 60px;
+  right: 60px;
+  font-size: clamp(18px, 2.8vw, 28px);
+  color: #ff7ea9;
+}
+
+/* Medical icons - distributed around edges */
+.medical-icon.person-icon {
+  top: 120px;
+  left: 30px;
+  font-size: clamp(16px, 2.4vw, 24px);
+  color: #cfe8f1;
+}
+
+.medical-icon.cross-icon {
+  top: 200px;
+  left: 50px;
+  font-size: clamp(18px, 2.6vw, 26px);
+  color: #cfe8f1;
+}
+
+.medical-icon.calendar-icon {
+  top: 280px;
+  right: 40px;
+  font-size: clamp(16px, 2.4vw, 24px);
+  color: #cfe8f1;
+}
+
+.medical-icon.stethoscope-icon {
+  bottom: 140px;
+  left: 60px;
+  font-size: clamp(18px, 2.6vw, 26px);
+  color: #cfe8f1;
+}
+
+.medical-icon.lightning-icon {
+  bottom: 80px;
+  right: 80px;
+  font-size: clamp(16px, 2.4vw, 24px);
+  color: #cfe8f1;
+}
+
+/* Oxygen symbols - bottom corners */
+.oxygen-symbol.oxygen-1 {
+  bottom: 100px;
+  left: 80px;
+  font-size: clamp(18px, 2.6vw, 26px);
+  color: #e9f3f8;
+  font-weight: 700;
+}
+
+.oxygen-symbol.oxygen-2 {
+  bottom: 40px;
+  right: 40px;
+  font-size: clamp(16px, 2.4vw, 24px);
+  color: #e9f3f8;
+  font-weight: 700;
+}
+
+/* SOS text - bottom center */
+.sos-text {
+  bottom: 60px;
+  right: 120px;
+  font-size: clamp(16px, 2vw, 22px);
+  color: #ff5252;
+  font-weight: 800;
+  transform: rotate(-5deg);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .decorative-elements > div {
+    font-size: clamp(14px, 2vw, 20px);
+  }
+
+  .heart-icon.heart-1 {
+    top: 60px;
+    left: 20px;
+  }
+  .heart-icon.heart-2 {
+    top: 40px;
+    right: 30px;
+  }
+  .medical-icon.person-icon {
+    top: 100px;
+    left: 15px;
+  }
+  .medical-icon.cross-icon {
+    top: 160px;
+    left: 25px;
+  }
+  .medical-icon.calendar-icon {
+    top: 220px;
+    right: 20px;
+  }
+  .medical-icon.stethoscope-icon {
+    bottom: 120px;
+    left: 30px;
+  }
+  .medical-icon.lightning-icon {
+    bottom: 60px;
+    right: 40px;
+  }
+  .oxygen-symbol.oxygen-1 {
+    bottom: 80px;
+    left: 40px;
+  }
+  .oxygen-symbol.oxygen-2 {
+    bottom: 30px;
+    right: 20px;
+  }
+  .sos-text {
+    bottom: 40px;
+    right: 80px;
+  }
+}
