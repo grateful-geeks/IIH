@@ -1,0 +1,553 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prosto+One&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300..700&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0c1f2a;
+  color: white;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Header/Navbar */
+.navbar {
+  margin: auto;
+  margin-top: 3vh;
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, #3a4a58, #1c232b);
+  padding: 10px 30px;
+  border-radius: 10px;
+  box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.2),
+    0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.navbar a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-family: "Quicksand", sans-serif;
+  font-size: 15px;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+  background: linear-gradient(to bottom, #3a4a58, #1c232b);
+}
+
+.navbar a:hover {
+  color: #b0d4ff;
+}
+.nav {
+  display: flex;
+}
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  color: #6ee7b7;
+  font-size: 1.5rem;
+}
+.logo-image {
+  height: 40px;
+  margin: 3vh;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #6ee7b7;
+}
+
+.header-icons {
+  margin-top: 4vh;
+  margin-right: 1vw;
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+
+.header-icons i {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.header-icons i:hover {
+  color: #6ee7b7;
+}
+
+/* Main Dashboard Layout */
+.dashboard {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  height: calc(100vh - 80px);
+  max-height: calc(100vh - 80px);
+}
+
+/* Left Section */
+.left-section {
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.left-section h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 1rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Profile Cards */
+.profile-card {
+  background: linear-gradient(135deg, #2d3748, #4a5568);
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.profile-card .avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border: 3px solid #6ee7b7;
+}
+
+.profile-card .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-card .name {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #facc15;
+  margin-bottom: 0.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.profile-card .role {
+  font-size: 0.9rem;
+  color: #e2e8f0;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Right Section */
+.right-section {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto auto 1fr;
+  gap: 1.5rem;
+  max-height: 100%;
+  /* box-sizing: border-box; */
+}
+.right-section > .prescription-card,
+.right-section > .progress-card,
+.right-section > .status-card {
+  grid-column: span 3;
+}
+/* .right-section > .status-card */
+/* .right-section > .chatbot-card,*/
+.right-section > .emergency-card {
+  grid-column: span 2;
+}
+/* .right-section > .chatbot-card{
+
+} */
+/* Status Card */
+.status-card {
+  background: linear-gradient(135deg, #2d3748, #4a5568);
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  grid-column: span 1;
+}
+
+.status-avatar .avatar-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: white;
+  flex-shrink: 0;
+}
+
+.status-content {
+  text-align: right;
+}
+
+.status-question {
+  font-size: 2rem;
+  color: #e2e8f0;
+  opacity: 30%;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.patient-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #facc15;
+  margin-bottom: 0.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.status-label {
+  font-size: 1rem;
+  opacity: 40%;
+  color: #a0aec0;
+  font-weight: 900;
+  margin-bottom: 0.25rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.status-value {
+  font-size: 0.9rem;
+  color: white;
+  font-weight: 900;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Emergency Card */
+.emergency-card {
+  background: linear-gradient(135deg, #b91c1c, #dc2626);
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  grid-column: span 1;
+}
+
+.emergency-content h3 {
+  font-size: 1.1rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.emergency-content p {
+  font-size: 0.8rem;
+  color: #fecaca;
+  font-weight: 900;
+}
+
+.emergency-icon {
+  font-size: 5rem;
+  color: white;
+}
+
+/* Chatbot Card */
+.chatbot-card {
+  background: linear-gradient(135deg, #2d3748, #4a5568);
+  border-radius: 15px;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  grid-column: span 1;
+}
+
+.chatbot-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: white;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 3px solid #6ee7b7; */
+}
+
+.chatbot-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.chatbot-content button {
+  display: inline-block;
+  /* padding: 10px 22px;        tall enough + wide for pill look */
+  font-size: 16px;
+  border-radius: 9999px;
+  /* font-size: 1rem; */
+  font-weight: 900;
+  color: #141f26;
+  background-color: rgb(126, 160, 223);
+  /* margin-bottom: 0.5rem; */
+  font-family: "Quicksand", sans-serif;
+  border: none;
+  border-radius: 15%;
+  padding: 0 1rem 0 1rem;
+}
+.chatbot-content button:hover {
+  background-color: white;
+}
+.chatbot-content p {
+  font-size: 0.9rem;
+  color: #e2e8f0;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Prescription Card */
+.prescription-card {
+  background: linear-gradient(135deg, #2d3748, #4a5568);
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  grid-column: span 1.5;
+  /* margin-bottom:2vh; */
+}
+
+.prescription-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.prescription-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.slot {
+  background: #4a5568;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 50px;
+}
+
+.slot.morning {
+  background: #8b4513;
+}
+
+.slot-label {
+  font-weight: 600;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.taken-btn {
+  background: #a0aec0;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.taken-btn:hover {
+  background: #718096;
+}
+
+/* Progress Card */
+.progress-card {
+  background: #2d3748;
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  grid-column: span 1.5;
+  /* margin-bottom:4vh; */
+}
+
+.progress-card h1 {
+  /* font-size: 1.2rem; */
+  font-weight: 900;
+  margin-bottom: 1rem;
+  color: #facc15;
+}
+
+.chart-container {
+  width: 120px;
+  height: 120px;
+  position: relative;
+}
+
+.pie-chart {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-segment {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.chart-segment.large {
+  background: #d9f99d;
+  clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 100%, 50% 100%);
+}
+
+.chart-segment.small {
+  background: #6b8e23;
+  clip-path: polygon(50% 50%, 50% 0%, 0% 0%, 0% 100%, 50% 100%);
+}
+/* .donutchart{
+  background-color: #0c1f2a;
+} */
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .dashboard {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .left-section {
+    flex: 0 0 280px;
+  }
+
+  .left-section h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dashboard {
+    flex-direction: column;
+    height: auto;
+    overflow-y: auto;
+  }
+
+  .left-section {
+    flex: none;
+    order: 2;
+  }
+
+  .right-section {
+    order: 1;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+  }
+
+  .status-card {
+    grid-column: 1;
+  }
+
+  .chatbot-card {
+    grid-column: 1;
+  }
+
+  .emergency-card {
+    grid-column: 1;
+  }
+
+  .prescription-card {
+    grid-column: 1;
+  }
+
+  .progress-card {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .logo-section {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .dashboard {
+    padding: 1rem;
+  }
+
+  .left-section h1 {
+    font-size: 2rem;
+  }
+
+  .profile-card {
+    padding: 1rem;
+  }
+
+  .profile-card .avatar {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .left-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .status-card,
+  .emergency-card,
+  .chatbot-card,
+  .prescription-card,
+  .progress-card {
+    padding: 1rem;
+  }
+
+  .chart-container {
+    width: 100px;
+    height: 100px;
+  }
+}

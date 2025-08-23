@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["Task", "done"],
+          ["completed", 6],
+          ["not completed", 4],
+        ]);
+
+        var options = {
+          // title: 'My Daily Activities',
+          pieHole: 0.7,
+          backgroundColor: "#2d3748",
+          colors: ["#D7E079", "green"],
+          // backgroundColor : '#2d3748',
+          // forceIFrame:'true'
+          pieSliceText: "none",
+          pieSliceBorderColor: "transparent",
+          is3D:'true',
+          legend: {
+            textStyle: { color: "white", fontSize: 16 },
+          },
+          // legend.textStyle: {
+          //   color: 'white',
+          //   fontName: 'Arial',
+          //   fontSize: 16,
+          //   bold: TRUE,
+          //   italic: FALSE
+          // }
+        };
+
+        var chart = new google.visualization.PieChart(
+          document.getElementById("donutchart")
+        );
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="nav">
+      <!-- Header -->
+      <!-- <header class="navbar"> -->
+      <!-- <div class="logo-section"> -->
+      <!-- <div class="logo">
+          <i class="fas fa-heartbeat"></i>
+        </div> -->
+      <img src="image.png" alt="Logo" class="logo-image" />
+      <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Register</a>
+        <a href="#">About Us</a>
+        <a href="#">Help</a>
+        <!-- <a href="#">Email</a> -->
+      </div>
+      <!-- </div> -->
+
+      <!-- </header> -->
+      <div class="header-icons">
+        <i class="fas fa-user"></i>
+        <i class="fas fa-bell"></i>
+      </div>
+    </div>
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+      <!-- Left Section -->
+      <section class="left-section">
+        <h1>Patient Dashboard</h1>
+
+        <!-- Doctor Profile Card -->
+        <div class="profile-card doctor-card">
+          <div class="avatar">
+            <img
+              src="2b6c0043a90a38751c6595f08923c93f954be81c.png"
+              alt="Dr. Yash"
+            />
+          </div>
+          <div class="profile-info">
+            <h3 class="name">Dr. Yash</h3>
+            <p class="role">Assistant Physician</p>
+          </div>
+        </div>
+
+        <!-- Nursing Staff Profile Card -->
+        <div class="profile-card nurse-card">
+          <div class="avatar">
+            <img
+              src="4d9a112d1ff58df81697c52dd9d2188f5433f147.jpg"
+              alt="Ms. Sunita"
+            />
+          </div>
+          <div class="profile-info">
+            <h3 class="name">Ms. Sunita</h3>
+            <p class="role">Nursing Staff</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Section -->
+      <section class="right-section">
+        <!-- Patient Status Card -->
+        <div class="status-card">
+          <div class="status-avatar">
+            <div class="avatar-placeholder"></div>
+          </div>
+          <div class="status-content">
+            <p class="status-question">How are you doing?</p>
+            <h2 class="patient-name">Alex</h2>
+            <p class="status-label">Current status:</p>
+            <p class="status-value">Rehabilation</p>
+          </div>
+        </div>
+
+        <!-- Chatbot Card -->
+        <div class="chatbot-card">
+          <div class="chatbot-avatar">
+            <img
+              src="2a11dfdabb4045a48a0beabfbf4ab571947cb21b.png"
+              alt="Chatbot"
+            />
+          </div>
+          <div class="chatbot-content">
+            <button>Reut</button>
+            <!-- <p>AI Assistant</p> -->
+          </div>
+        </div>
+
+        <!-- Emergency Alert Card -->
+        <div class="emergency-card">
+          <div class="emergency-content">
+            <h3>Need Urgent Help?</h3>
+            <p>Emergency/SOS alert</p>
+          </div>
+          <div class="emergency-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+        </div>
+
+        <!-- Latest Prescription Card -->
+        <div class="prescription-card">
+          <h3>Daily Tasks</h3>
+          <div class="prescription-slots">
+            <div class="slot morning">
+              <span class="slot-label">MORNING</span>
+              <button class="taken-btn">Taken</button>
+            </div>
+            <!-- <div class="slot afternoon">
+              <span class="slot-label">Afternoon</span>
+            </div> -->
+            <div class="slot dinner">
+              <span class="slot-label">EVENING</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Daily Progress Card -->
+        <div class="progress-card">
+          <!-- <h3>Daily Progress</h3>
+          <div class="progress-chart">
+            <div class="chart-container">
+              <div class="pie-chart">
+                <div class="chart-segment large"></div>
+                <div class="chart-segment small"></div>
+              </div>
+            </div>
+          </div> -->
+          <h1>Daily Progress</h1>
+          <div id="donutchart" style="width: 100%; height: 260px"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
