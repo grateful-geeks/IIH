@@ -1,0 +1,94 @@
+/* General page */
+body {
+  margin: 0;
+  background: #141f26; /* outer grey */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Small heading at top */
+.page-title {
+  width: 100%;
+  max-width: 1000px;
+  text-align: left;
+  font-size: 20px;
+  color: #c8c8cc;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* About Card */
+.about-card {
+  position: relative;
+  max-width: 1000px;
+  background: #141f26; /* ✅ updated background color */
+  border-radius: 12px;
+  padding: 60px 50px 220px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Logo top left */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 40px;
+}
+
+/* Buttons top right */
+.top-buttons {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+.icon-btn {
+  background: transparent;
+  border: 1px solid #ccc;
+  color: #fff;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Headings (Poppins) */
+h1 {
+  margin-top: 0;
+  font-size: 42px; /* bigger main heading */
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+.faded {
+  color: #777;
+  font-size: 38px;
+  margin: 10px 0 25px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+/* Paragraph (Pontano Sans) */
+p {
+  max-width: 950px;
+  /* margin: 0px ; */
+  line-height: 1.7;
+  font-size: 22px; /* ✅ increased font size */
+  font-family: "Pontano Sans", sans-serif;
+}
+
+/* Doctor picture */
+.illustration {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* max-width: 300px; */
+  height: 300px;
+  opacity: 0.95;
+}
